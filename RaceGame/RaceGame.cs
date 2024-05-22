@@ -1,4 +1,8 @@
-﻿namespace Race
+﻿using System.IO;
+using System.Reflection;
+using System.Windows.Forms;
+
+namespace Race
 {
     public partial class RaceGame : Form
     {
@@ -37,7 +41,7 @@
             lanesMenuTwo = new Label[] { MenuTwoLane1, MenuTwoLane2, MenuTwoLane3, MenuTwoLane4, MenuTwoLane5 };
 
             coinsCollection = new PictureBox[] { Coin1, Coin2, Coin3 };
-                                 
+
             timerRoad.Stop();
             timerTowardCars.Stop();
             panelMenu.Show();
@@ -62,7 +66,7 @@
             panelGame.Show();
             panelMenu.Hide();
         }
-             
+
         private void timerRoad_Tick(object sender, EventArgs e)
         {
             AddScore();
@@ -119,7 +123,7 @@
             var speedDifference = new int[] { 4, 2, 3 };
 
             for (int i = 0; i < towardCars.Length; i++)
-            {                
+            {
                 towardCars[i].Top += carSpeed + speedDifference[i];
 
                 if (towardCars[i].Top > Height)
@@ -222,9 +226,7 @@
 
         private void buttonHelp_Click(object sender, EventArgs e)
         {
-
-            Help.ShowHelp(this, @"help.chm");  //(this, "help.chm", HelpNavigator.TableOfContents);@"RaceGame\help.chm" C:\Users\79060\source\repos\RaceGame\RaceGame\help.chm
-
+            Help.ShowHelp(this, @"..\..\..\help.chm");
         }
 
         private void buttonStart_Click(object sender, EventArgs e)
@@ -254,21 +256,25 @@
 
         private void StartMenuCar(int index)
         {
-            menuCars[index].Top = -menuCars[index].Height;
-            menuCars[index].Left = random.Next(0, Width - menuCars[index].Width);
+            GetNewPictureBoxLocation(menuCars[index]);
         }
 
         private void StartTowardCar(int index)
         {
-            towardCars[index].Top = -towardCars[index].Height;
-            towardCars[index].Left = random.Next(0, Width - towardCars[index].Width);
+            GetNewPictureBoxLocation(towardCars[index]);
         }
 
         private void GetNewCoinLocation(int index)
         {
-            coinsCollection[index].Top = -coinsCollection[index].Height;
-            coinsCollection[index].Left = random.Next(0, ClientSize.Width - coinsCollection[index].Width);
+            GetNewPictureBoxLocation(coinsCollection[index]);
         }
+
+        private void GetNewPictureBoxLocation(PictureBox pictureBox)
+        {
+            pictureBox.Top = -pictureBox.Height;
+            pictureBox.Left = random.Next(0, ClientSize.Width - pictureBox.Width);
+        }
+
 
         private void MoveCoins()
         {
@@ -286,8 +292,8 @@
         private void PushCoin(int index)
         {
             coinsCollection[index].Top += carSpeed; ;
-        }             
-       
+        }
+
         private void CollectCoins()
         {
             for (int i = 0; i < coinsCollection.Length; i++)
@@ -313,7 +319,7 @@
         {
             coins++;
             labelCoins.Text = "Coins: " + coins;
-        }       
+        }
     }
 }
 

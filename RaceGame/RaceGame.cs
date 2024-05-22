@@ -1,7 +1,4 @@
-﻿using System.IO;
-using System.Reflection;
-using System.Windows.Forms;
-
+﻿
 namespace Race
 {
     public partial class RaceGame : Form
@@ -84,30 +81,49 @@ namespace Race
         {
             var stepSide = 9;
             var maxSpeed = 21;
+            var carWidthHalf = mainCar.Width / 2;
+
 
 
             if (e.KeyCode == Keys.Right)
             {
-                if (mainCar.Right < ClientSize.Width)
+                if (mainCar.Right < ClientSize.Width - carWidthHalf)
+                {
                     mainCar.Left += stepSide;
+                    return;
+                }
+
+                mainCar.Left = -carWidthHalf;
+
             }
 
             if (e.KeyCode == Keys.Left)
             {
-                if (mainCar.Left > 0)
+                if (mainCar.Left > -carWidthHalf)
+                {
                     mainCar.Left -= stepSide;
+                    return;
+                }
+
+                mainCar.Left = ClientSize.Width - carWidthHalf;
             }
 
             if (e.KeyCode == Keys.Up)
             {
                 if (carSpeed < maxSpeed)
+                {
                     carSpeed++;
+                    return;
+                }
             }
 
             if (e.KeyCode == Keys.Down)
             {
                 if (carSpeed > 0)
+                {
                     carSpeed--;
+                    return;
+                }
             }
 
             if (e.KeyCode == Keys.Escape)

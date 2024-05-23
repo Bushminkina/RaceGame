@@ -1,4 +1,6 @@
 ﻿
+using System.Media;
+
 namespace Race
 {
     public partial class RaceGame : Form
@@ -18,6 +20,7 @@ namespace Race
         PictureBox[] menuCars;
 
         Random random = new Random();
+        SoundPlayer player;
 
         int score = 0;
         int coins = 0;
@@ -46,7 +49,8 @@ namespace Race
             timerTowardCars.Stop();
             resultsPanel.Hide();
             panelMenu.Show();
-
+            player = new SoundPlayer(Properties.Resources.sound1);
+            player.PlayLooping();
         }
 
         private void StartGame()
@@ -67,6 +71,7 @@ namespace Race
             panelPause.Hide();
             panelMenu.Hide();
             panelGame.Show();
+            
         }
 
         private void timerRoad_Tick(object sender, EventArgs e)
@@ -186,7 +191,7 @@ namespace Race
         private void GameOver()
         {
             timerRoad.Stop();
-            timerTowardCars.Stop();
+            timerTowardCars.Stop();            
 
             if (coins < costRepairs)
             {

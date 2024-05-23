@@ -121,7 +121,7 @@
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="CarMenu1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="menuCar1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAY0AAAMgCAYAAADfuj7IAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         ggAAC4IBvvripQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAAddEVYdFRpdGxl
@@ -993,7 +993,7 @@
         OryUesjvWc7q+x681KS84AX/P6zYBSHfyhJpAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="CarMenu3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="menuCar3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAfQAAAPvCAYAAAA1WDz7AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAA/7JJREFUeF7s/QvctttUNg6/lmXZrWVtrdV69rv17Nazw7LNKwlJQqwkSSpJlHaS
@@ -7279,7 +7279,7 @@
         pmKRq3seRLbIL4cubTb5KqK6jbV2z9nS+0WcLUHEAc9Ledtt/wHqdMTISfOH5AAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="CarMenu2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="menuCar2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAY0AAAMgCAYAAADfuj7IAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAA4QdJREFUeF7snQm0XFWV97/lcvXq1atXr9YF5qXm+Q31aniZyEBICEkImRMyzwmZ
@@ -8245,6 +8245,18 @@
         z4vPjc+P70HHYRBacjOJqkTXXfd/Olx8aNUUQj8AAAAASUVORK5CYII=
 </value>
   </data>
+  <metadata name="userName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="UserScore.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="CoinsNumber.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Date.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="pictureFlag.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAyAAAAKuCAYAAABZvXh0AAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
@@ -17461,7 +17473,7 @@
         pmKRq3seRLbIL4cubTb5KqK6jbV2z9nS+0WcLUHEAc9Ledtt/wHqdMTISfOH5AAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="Coin3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="coin3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAVDNJREFUeF7t
         3XmwVdWdL/DmggyCiBEFA1GuOBtFnAeiwOohVV1td5lYqbxUEl/Fei+d6s5Ld6W6qzpdqaRf2kq/V5V6
@@ -17826,7 +17838,7 @@
         hCfiveQP/h/rk64DGDZLtQAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="Coin2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="coin2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAVDNJREFUeF7t
         3XmwVdWdL/DmggyCiBEFA1GuOBtFnAeiwOohVV1td5lYqbxUEl/Fei+d6s5Ld6W6qzpdqaRf2kq/V5V6
@@ -18191,7 +18203,7 @@
         hCfiveQP/h/rk64DGDZLtQAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="Coin1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="coin1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAVDNJREFUeF7t
         3XmwVdWdL/DmggyCiBEFA1GuOBtFnAeiwOohVV1td5lYqbxUEl/Fei+d6s5Ld6W6qzpdqaRf2kq/V5V6
@@ -23378,5 +23390,8 @@
   </metadata>
   <metadata name="timerMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>316, 17</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>25</value>
   </metadata>
 </root>

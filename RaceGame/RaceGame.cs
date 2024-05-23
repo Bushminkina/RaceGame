@@ -6,7 +6,7 @@ namespace Race
         public RaceGame()
         {
             InitializeComponent();
-        }
+        }            
 
         Label[] lanesOne;
         Label[] lanesTwo;
@@ -25,23 +25,28 @@ namespace Race
         int carSpeed = 2;
         int costRepairs = 15;
 
+        public User user;
 
         private void RaceGame_Load(object sender, EventArgs e)
         {
+            user = new User();
+
             towardCars = new PictureBox[] { towardCar1, towardCar2, towardCar3 };
             menuCars = new PictureBox[] { menuCar1, menuCar2, menuCar3 };
 
-            lanesOne = new Label[] { LaneOne1, LaneOne2, LaneOne3, LaneOne4, LaneOne5 };
-            lanesTwo = new Label[] { LaneTwo1, LaneTwo2, LaneTwo3, LaneTwo4, LaneTwo5 };
+            lanesOne = new Label[] { laneOne1, laneOne2, laneOne3, laneOne4, laneOne5 };
+            lanesTwo = new Label[] { laneTwo1, laneTwo2, laneTwo3, laneTwo4, laneTwo5 };
 
-            lanesMenuOne = new Label[] { MenuOneLane1, MenuOneLane2, MenuOneLane3, MenuOneLane4, MenuOneLane5 };
-            lanesMenuTwo = new Label[] { MenuTwoLane1, MenuTwoLane2, MenuTwoLane3, MenuTwoLane4, MenuTwoLane5 };
+            lanesMenuOne = new Label[] { menuOneLane1, menuOneLane2, menuOneLane3, menuOneLane4, menuOneLane5 };
+            lanesMenuTwo = new Label[] { menuTwoLane1, menuTwoLane2, menuTwoLane3, menuTwoLane4, menuTwoLane5 };
 
-            coinsCollection = new PictureBox[] { Coin1, Coin2, Coin3 };
+            coinsCollection = new PictureBox[] { coin1, coin2, coin3 };
 
             timerRoad.Stop();
             timerTowardCars.Stop();
+            resultsPanel.Hide();
             panelMenu.Show();
+
         }
 
         private void StartGame()
@@ -60,8 +65,8 @@ namespace Race
             }
 
             panelPause.Hide();
-            panelGame.Show();
             panelMenu.Hide();
+            panelGame.Show();
         }
 
         private void timerRoad_Tick(object sender, EventArgs e)
@@ -188,6 +193,8 @@ namespace Race
                 MessageBox.Show("Game Over!", "Приехали!");
                 panelPause.Show();
                 panelMenu.Show();
+
+                SaveResult();
             }
             else
             {
@@ -254,7 +261,7 @@ namespace Race
 
         private void buttonMenuExit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         private void MoveLanes(Label[] lanes)
@@ -335,6 +342,39 @@ namespace Race
         {
             coins++;
             labelCoins.Text = "Coins: " + coins;
+        }
+
+        private void SaveResult()
+        {
+            user.Score = score;
+            user.Coins = coins;
+            user.Date = DateTime.Now;
+
+            UsersResults.Append(user);
+        }
+
+        private void resultsButton_Click(object sender, EventArgs e)
+        {
+            resultsPanel.Show();
+            resultsPanel.BringToFront();
+
+            var allResults = UsersResults.GetAll();
+
+            foreach (User result in allResults)
+            {
+                resultsDataGridView.Rows.Add(result.Name, result.Score, result.Coins, result.Date);
+            }
+        }
+
+        private void backButton_Click(object sender, EventArgs e)
+        {
+            resultsPanel.Hide();
+        }
+
+        private void nameButton_Click(object sender, EventArgs e)
+        {
+            var nameForm = new userNameForm(user);
+            nameForm.ShowDialog();
         }
     }
 }
